@@ -2,6 +2,13 @@
 
 @section('content')
 @inject('Carbon', 'Carbon\Carbon')
+@php
+    function string_limit($string, $limit)
+    {
+        $result = (strlen($string) > $limit)? substr(strip_tags($string), 0, $limit) . '...' : $string;
+        return $result;
+    }
+@endphp
 <!-- Start Hero -->
 <section class="relative table w-full py-36 overflow-hidden bg-gradient-to-b to-transparent from-indigo-600/20 dark:from-indigo-600/40">
     <div class="container">
@@ -403,74 +410,47 @@
         <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
             <div class="lg:col-span-8 md:col-span-6">
                 <div class="grid grid-cols-1 gap-[30px]">
-                    <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
-                        <div class="lg:flex relative">
-                            <div class="relative md:shrink-0">
-                                <img class="h-full w-full object-cover lg:w-52 lg:h-56" src="{{ asset('assets/images/blog/02.jpg') }}" alt="">
-                            </div>
-                            <div class="p-6 flex flex-col lg:h-56 justify-center">
-                                <a href="https://berita.depok.go.id/" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">
-                                    Berita 001
-                                </a>
-                                <div class="my-auto">
-                                    <p class="text-slate-400 mt-3">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deserunt dolores, porro libero temporibus delectus.
-                                    </p>
-                                </div>
-                                <div class="mt-4">
-                                    <a href="https://berita.depok.go.id/" class="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                        Selengkapnya <i class="uil uil-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--end content-->
-
-                    <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
-                        <div class="lg:flex relative">
-                            <div class="relative md:shrink-0">
-                                <img class="h-full w-full object-cover lg:w-52 lg:h-56" src="{{ asset('assets/images/blog/03.jpg') }}" alt="">
-                            </div>
-                            <div class="p-6 flex flex-col lg:h-56 justify-center">
-                                <a href="https://berita.depok.go.id/" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">
-                                    Berita 002
-                                </a>
-                                <div class="my-auto">
-                                    <p class="text-slate-400 mt-3">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt fuga nobis quae mollitia praesentium hic.
-                                    </p>
-                                </div>
-                                <div class="mt-4">
-                                    <a href="https://berita.depok.go.id/" class="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                        Selengkapnya <i class="uil uil-arrow-right"></i>
-                                    </a>
+                    @if (!empty($cityNews))
+                    @php
+                        $count = 0;
+                    @endphp
+                        @foreach ($cityNews as $cityNew)
+                            <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
+                                <div class="lg:flex relative">
+                                    <div class="relative md:shrink-0">
+                                        @if (!empty($cityNew['image']))
+                                            <img loading="lazy" class="h-full w-full object-cover lg:w-52 lg:h-56" src="{{ $cityNew['image'] }}" alt="News">
+                                        @else
+                                            <img loading="lazy" class="h-full w-full object-cover lg:w-52 lg:h-56" src="{{ asset('assets/images/page/news.jpg') }}" alt="News">
+                                        @endif
+                                    </div>
+                                    <div class="p-6 flex flex-col lg:h-56 justify-center">
+                                        <a href="{{ $cityNew['link'] }}" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out" target="_blank">
+                                            {{ $cityNew['title'] }}
+                                        </a>
+                                        <div class="my-auto">
+                                            <p class="text-slate-400 mt-3">
+                                                {!! string_limit($cityNew['body'], 155) !!}
+                                            </p>
+                                        </div>
+                                        <div class="mt-4">
+                                            <a href="{{ $cityNew['link'] }}" class="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out" target="_blank">
+                                                Selengkapnya <i class="uil uil-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div><!--end content-->
-
-                    <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
-                        <div class="lg:flex relative">
-                            <div class="relative md:shrink-0">
-                                <img class="h-full w-full object-cover lg:w-52 lg:h-56" src="{{ asset('assets/images/blog/04.jpg') }}" alt="">
-                            </div>
-                            <div class="p-6 flex flex-col lg:h-56 justify-center">
-                                <a href="https://berita.depok.go.id/" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">
-                                    Berita 003
-                                </a>
-                                <div class="my-auto">
-                                    <p class="text-slate-400 mt-3">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore minima impedit, minus quas alias aut.
-                                    </p>
-                                </div>
-                                <div class="mt-4">
-                                    <a href="https://berita.depok.go.id/" class="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                        Selengkapnya <i class="uil uil-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--end content-->
+                            @php
+                                $count++;
+                            @endphp
+                            @if ($count == 3)
+                                @break
+                            @endif
+                        @endforeach
+                    @else
+                        Koneksi API Terputus
+                    @endif
                 </div>
             </div>
 
@@ -479,56 +459,40 @@
                     <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center">
                         Pengumuman
                     </h5>
-                    <div class="flex items-center mt-8">
-                        <img src="{{ asset('assets/images/blog/06.jpg') }}" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-                        <div class="ml-3">
-                            <a href="https://depok.go.id/" class="font-semibold hover:text-indigo-600">
-                                Pengumuman 001
-                            </a>
-                            <p class="text-sm text-slate-400">
-                                <script>
-                                    var currentDate = new Date();
-                                    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                                    var fullDate = currentDate.toLocaleDateString('id-ID', options);
-                                    document.write(fullDate);
-                                </script>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center mt-4">
-                        <img src="{{ asset('assets/images/blog/07.jpg') }}" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-                        <div class="ml-3">
-                            <a href="https://depok.go.id/" class="font-semibold hover:text-indigo-600">
-                                Pengumuman 002
-                            </a>
-                            <p class="text-sm text-slate-400">
-                                <script>
-                                    var currentDate = new Date();
-                                    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                                    var fullDate = currentDate.toLocaleDateString('id-ID', options);
-                                    document.write(fullDate);
-                                </script>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-center mt-4">
-                        <img src="{{ asset('assets/images/blog/08.jpg') }}" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="">
-                        <div class="ml-3">
-                            <a href="https://depok.go.id/" class="font-semibold hover:text-indigo-600">
-                                Pengumuman 003
-                            </a>
-                            <p class="text-sm text-slate-400">
-                                <script>
-                                    var currentDate = new Date();
-                                    var options = { year: 'numeric', month: 'long', day: 'numeric' };
-                                    var fullDate = currentDate.toLocaleDateString('id-ID', options);
-                                    document.write(fullDate);
-                                </script>
-                            </p>
-                        </div>
-                    </div>
+                    @if (!empty($cityAnnouncements))
+                    @php
+                        $count = 0;
+                    @endphp
+                        @foreach ($cityAnnouncements as $cityAnnouncement)
+                            <div class="flex items-center mt-8">
+                                @php
+                                    $cityAnnouncementDate = $Carbon::parse($cityAnnouncement['created_at']);
+                                    $cityAnnouncementDate = $cityAnnouncementDate->format('d-m-Y');
+                                @endphp
+                                @if (!empty($cityAnnouncement['imageName']))
+                                    <img loading="lazy" src="https://depok.go.id/storage/uploads/sliders/{{ $cityAnnouncement['imageName'] }}" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="Announcement">
+                                @else
+                                    <img loading="lazy" src="{{ asset('assets/images/page/announcement.jpg') }}" class="h-16 rounded-md shadow dark:shadow-gray-800" alt="Announcement">
+                                @endif
+                                <div class="ml-3">
+                                    <a href="https://depok.go.id/pengumuman/{{ $cityAnnouncement['url'] }}" class="font-semibold hover:text-indigo-600" target="_blank">
+                                        {{ $cityAnnouncement['nama'] }}
+                                    </a>
+                                    <p class="text-sm text-slate-400">
+                                        {{ $cityAnnouncementDate }}
+                                    </p>
+                                </div>
+                            </div>
+                            @php
+                                $count++;
+                            @endphp
+                            @if ($count == 3)
+                                @break
+                            @endif
+                        @endforeach
+                    @else
+                        Koneksi API Terputus
+                    @endif
 
                     <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
                         Media Sosial
@@ -554,10 +518,10 @@
                                 <i data-feather="youtube" class="h-4 w-4"></i>
                             </a>
                         </li>
-                    </ul><!--end icon-->
+                    </ul>
                 </div>
             </div>
-        </div><!--end grid-->
+        </div>
     </div><!--end container-->
 </section><!--end section-->
 <!-- End City News -->

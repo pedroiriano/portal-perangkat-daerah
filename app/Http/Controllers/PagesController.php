@@ -45,6 +45,8 @@ class PagesController extends Controller
         /**
          * Prayers
          */
+        $pt = NULL;
+        $prayerName = NULL;
         if ($timeNow > $this->prayer_time(1) && $timeNow < $this->prayer_time(2))
         {
             $pt = $this->prayer_time(2);
@@ -202,11 +204,17 @@ class PagesController extends Controller
          */
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://berita.depok.go.id/api/v1/berita');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $output = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE);
+        $response = curl_exec($ch);
+        if ($response === false)
+            $response = curl_error($ch);
         curl_close($ch);
-        $beritakota = json_decode($output, TRUE);
+        $cityNews = json_decode($response, TRUE);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetExLink?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=&offset=&categoryId=659&slug=&key=');
@@ -216,7 +224,7 @@ class PagesController extends Controller
         curl_close($ch);
         $link = json_decode($output, TRUE);
 
-        return view('pages.index', compact('dateNow', 'dayNow', 'sliders', 'pt', 'prayerName', 'infographics', 'news', 'latestNews', 'announcements', 'cityAnnouncements', 'agendas', 'beritakota', 'link'));
+        return view('pages.index', compact('dateNow', 'dayNow', 'sliders', 'pt', 'prayerName', 'infographics', 'news', 'latestNews', 'announcements', 'cityAnnouncements', 'agendas', 'cityNews', 'link'));
     }
 
     private function sign($x)
