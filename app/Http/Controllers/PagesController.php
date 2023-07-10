@@ -45,41 +45,27 @@ class PagesController extends Controller
         /**
          * Prayers
          */
-        $pt = NULL;
-        $prayerName = NULL;
-        if ($timeNow > $this->prayer_time(1) && $timeNow < $this->prayer_time(2))
-        {
+        if ($timeNow > $this->prayer_time(1) && $timeNow < $this->prayer_time(2)) {
             $pt = $this->prayer_time(2);
             $prayerName = 'Salat Dhuha';
-        }
-        else if ($timeNow > $this->prayer_time(2) && $timeNow < $this->prayer_time(3))
-        {
+        } else if ($timeNow > $this->prayer_time(2) && $timeNow < $this->prayer_time(3)) {
             $pt = $this->prayer_time(3);
             $prayerName = 'Salat Zuhur';
-        }
-        else if ($timeNow > $this->prayer_time(3) && $timeNow < $this->prayer_time(4))
-        {
+        } else if ($timeNow > $this->prayer_time(3) && $timeNow < $this->prayer_time(4)) {
             $pt = $this->prayer_time(4);
             $prayerName = 'Salat Asar';
-        }
-        else if ($timeNow > $this->prayer_time(4) && $timeNow < $this->prayer_time(5))
-        {
+        } else if ($timeNow > $this->prayer_time(4) && $timeNow < $this->prayer_time(5)) {
             $pt = $this->prayer_time(5);
             $prayerName = 'Salat Magrib';
-        }
-        else if ($timeNow > $this->prayer_time(5) && $timeNow < $this->prayer_time(6))
-        {
+        } else if ($timeNow > $this->prayer_time(5) && $timeNow < $this->prayer_time(6)) {
             $pt = $this->prayer_time(6);
             $prayerName = 'Salat Isya';
-        }
-        else if ($timeNow > $this->prayer_time(6) && $timeNow > $this->prayer_time(1))
-        {
+        } else if ($timeNow > $this->prayer_time(6) || $timeNow < $this->prayer_time(1)) {
             $pt = $this->prayer_time(1);
             $prayerName = 'Salat Subuh';
-        }
-        else
-        {
-
+        } else {
+            $pt = 'Terjadi Kesalahan';
+            $prayerName = 'Terjadi Kesalahan';
         }
 
         /**
@@ -104,7 +90,6 @@ class PagesController extends Controller
          */
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/get_content?siteId=86&status=ST01&kanalType=K003&limit=1&offset=&category=722&slug=&key=');
-        /* curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/get_content?siteId='.config("constants.siteId").'&status=ST01&kanalType=K003&limit=&offset=&category=722&slug=&key='); */
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -216,6 +201,9 @@ class PagesController extends Controller
         curl_close($ch);
         $cityNews = json_decode($response, TRUE);
 
+        /**
+         * External Link
+         */
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetExLink?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=&offset=&categoryId=659&slug=&key=');
         curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
@@ -224,7 +212,22 @@ class PagesController extends Controller
         curl_close($ch);
         $link = json_decode($output, TRUE);
 
-        return view('pages.index', compact('dateNow', 'dayNow', 'sliders', 'pt', 'prayerName', 'infographics', 'news', 'latestNews', 'announcements', 'cityAnnouncements', 'agendas', 'cityNews', 'link'));
+        return view('pages.index', [
+            'dateNow' => $dateNow,
+            'dayNow' => $dayNow,
+            'sliders' => $sliders,
+            'pt' => $pt,
+            'prayerName' => $prayerName,
+            'infographics' => $infographics,
+            'news' => $news,
+            'latestNews' => $latestNews,
+            'announcements' => $announcements,
+            'cityAnnouncements' => $cityAnnouncements,
+            'agendas' => $agendas,
+            'cityNews' => $cityNews,
+            'link' => $link,
+            'string_limit' => [$this, 'string_limit'],
+        ]);
     }
 
     private function sign($x)

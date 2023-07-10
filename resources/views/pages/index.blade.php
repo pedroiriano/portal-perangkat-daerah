@@ -2,13 +2,6 @@
 
 @section('content')
 @inject('Carbon', 'Carbon\Carbon')
-@php
-    function string_limit($string, $limit)
-    {
-        $result = (strlen($string) > $limit)? substr(strip_tags($string), 0, $limit) . '...' : $string;
-        return $result;
-    }
-@endphp
 <!-- Start Hero -->
 <section class="relative table w-full py-36 overflow-hidden bg-gradient-to-b to-transparent from-indigo-600/20 dark:from-indigo-600/40">
     <div class="container">
@@ -430,7 +423,7 @@
                                         </a>
                                         <div class="my-auto">
                                             <p class="text-slate-400 mt-3">
-                                                {!! string_limit($cityNew['body'], 155) !!}
+                                                {!! $string_limit($cityNew['body'], 155) !!}
                                             </p>
                                         </div>
                                         <div class="mt-4">
@@ -664,17 +657,17 @@
         m = checkTime(m);
         s = checkTime(s);
         document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s + " WIB";
-        var dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        var dayOptions = { weekday: 'long' };
-        var fullDate = currentDate.toLocaleDateString('id-ID', dateOptions);
-        var day = currentDate.toLocaleDateString('id-ID', dayOptions);
+        let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        let dayOptions = { weekday: 'long' };
+        let fullDate = today.toLocaleDateString('id-ID', dateOptions);
+        let day = today.toLocaleDateString('id-ID', dayOptions);
         document.getElementById('date').innerHTML =  fullDate;
         document.getElementById('day').innerHTML =  day;
         setTimeout(startTime, 1000);
     }
 
     function checkTime(i) {
-        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        if (i < 10) {i = "0" + i};
         return i;
     }
 </script>
