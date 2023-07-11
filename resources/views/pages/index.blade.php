@@ -15,6 +15,12 @@
                                 <div class="grid grid-cols-1">
                                     <div class="text-center">
                                         {!! $slider['Description'] !!}
+                                        {{-- <h1 class="font-semibold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5">
+                                            Judul Slider
+                                        </h1>
+                                        <p class="text-white/70 text-lg max-w-xl mx-auto">
+                                            Deskripsi Slider yang menjelaskan secara singkat arti dari Judul dan Gambar Slider.
+                                        </p> --}}
                                     </div>
                                 </div>
                             </div>
