@@ -538,7 +538,7 @@
                     @foreach ($externalLinks as $externalLink)
                         <div class="tiny-slide">
                             <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                                <div class="py-10 bg-gradient-to-r to-orange-600/70 from-indigo-600/70"></div>
+                                <div class="py-10 bg-gradient-to-r to-violet-600/70 from-indigo-600/70"></div>
                                 <div class="p-6 pt-0 -mt-10 text-center">
                                     <a href="{{ $externalLink['URLMenu'] }}">
                                         @if (!empty($externalLink['ImageMenu']))
