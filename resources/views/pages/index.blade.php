@@ -31,7 +31,7 @@
                 Koneksi API Terputus
             @endif
         </div>
-        
+
         <div class="swiper-button-next rounded-full text-center"></div>
         <div class="swiper-button-prev rounded-full text-center"></div>
     </div>
@@ -564,12 +564,6 @@
                     Koneksi API Terputus
                 @endif
                 <!-- Slide -->
-            </div>
-        </div><!--end grid-->
-
-        <div class="grid md:grid-cols-12 grid-cols-1 md:hidden">
-            <div class="md:col-span-12 text-center">
-                <a href="nft-creators.html" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">See More <i class="uil uil-arrow-right align-middle"></i></a>
             </div>
         </div><!--end grid-->
     </div><!--end container-->
