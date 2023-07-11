@@ -26,6 +26,7 @@
 {{-- BEGIN::Plugins CSS --}}
 <link href="{{ asset('assets/libs/tobii/css/tobii.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/libs/tiny-slider/tiny-slider.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/libs/swiper/css/swiper.min.css') }}" rel="stylesheet">
 <link href="{{ asset('assets/libs/@iconscout/unicons/css/line.css') }}" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
 {{-- END::Plugins CSS --}}

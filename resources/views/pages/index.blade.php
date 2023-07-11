@@ -3,31 +3,34 @@
 @section('content')
 @inject('Carbon', 'Carbon\Carbon')
 <!-- Start Hero -->
-<section class="relative table w-full py-36 overflow-hidden bg-gradient-to-b to-transparent from-indigo-600/20 dark:from-indigo-600/40">
-    <div class="container">
-        <div class="relative grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">
-            <div class="md:col-span-6">
-                <div class="md:mr-8">
-                    <h4 class="font-bold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-black dark:text-white relative">
-                        Perangkat Daerah Kota Depok
-                    </h4>
-                    <p class="text-slate-400 text-lg max-w-xl">
-                        Website Resmi Perangkat Daerah Kota Depok. Semua informasi mengenai Sistem Layanan yang difasilitasi oleh Perangkat Daerah Kota Depok tersedia di sini.
-                    </p>
-                </div>
-            </div><!--end col-->
-
-            <div class="md:col-span-6">
-                <div class="relative">
-                    <div class="relative rounded-xl overflow-hidden shadow-md dark:shadow-gray-800">
-                        <div class="w-full py-72 bg-slate-400 bg-no-repeat bg-top" data-jarallax='{"speed": 0.1}' style="background-image: url({{ asset('assets/images/saas/home.jpg') }}); background-size: cover;"></div>
+<section class="swiper-slider-hero relative block h-screen" id="home">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            @if (!empty($sliders))
+                @foreach ($sliders as $slider)
+                    <div class="swiper-slide flex items-center overflow-hidden">
+                        <div class="slide-inner slide-bg-image flex items-center bg-center bg-no-repeat" data-background="https://cms.depok.go.id/upload/slider/{{ $slider['File'] }}" style="background-size: contain">
+                            <div class="absolute inset-0 bg-black/70"></div>
+                            <div class="container">
+                                <div class="grid grid-cols-1">
+                                    <div class="text-center">
+                                        {!! $slider['Description'] !!}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div><!--end col-->
-        </div><!--end grid-->
-    </div><!--end container-->
-</section><!--end section-->
-<!-- End Hero -->
+                @endforeach
+            @else
+                Koneksi API Terputus
+            @endif
+        </div>
+        
+        <div class="swiper-button-next rounded-full text-center"></div>
+        <div class="swiper-button-prev rounded-full text-center"></div>
+    </div>
+</section>
+<!-- Hero End -->
 
 <!-- Start Widget -->
 <section class="relative py-16 bg-gray-50 dark:bg-slate-800">
