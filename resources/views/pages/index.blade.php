@@ -531,107 +531,29 @@
         <div class="grid grid-cols-1 mt-2 md:mt-6 relative">
             <div class="tiny-five-item">
                 <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-orange-600/70 from-indigo-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/01.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
+                @if (!empty($externalLinks))
+                    @php
+                        $count = 0;
+                    @endphp
+                    @foreach ($externalLinks as $externalLink)
+                        <div class="tiny-slide">
+                            <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
+                                <div class="py-10 bg-gradient-to-r to-orange-600/70 from-indigo-600/70"></div>
+                                <div class="p-6 pt-0 -mt-10 text-center">
+                                    <a href="{{ $externalLink['URLMenu'] }}">
+                                        @if (!empty($externalLink['ImageMenu']))
+                                            <img src="https://cms.depok.go.id/upload/externalLogo/{{ $externalLink['ImageMenu'] }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
+                                        @else
+                                            <img src="{{ asset('assets/images/page/link.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
+                                        @endif
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-red-600/70 from-indigo-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/02.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-fuchsia-600/70 from-green-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/03.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-pink-600/70 from-purple-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/04.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-violet-600/70 from-blue-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/05.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-orange-600/70 from-indigo-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/06.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-sky-600/70 from-yellow-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/07.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Slide -->
-
-                <!-- Slide -->
-                <div class="tiny-slide">
-                    <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">
-                        <div class="py-10 bg-gradient-to-r to-lime-600/70 from-rose-600/70"></div>
-                        <div class="p-6 pt-0 -mt-10 text-center">
-                            <a href="">
-                                <img src="{{ asset('assets/images/client/08.jpg') }}" class="h-28 w-28 rounded-full shadow-lg dark:shadow-gray-800 mx-auto" alt="External Link">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @else
+                    Koneksi API Terputus
+                @endif
                 <!-- Slide -->
             </div>
         </div><!--end grid-->

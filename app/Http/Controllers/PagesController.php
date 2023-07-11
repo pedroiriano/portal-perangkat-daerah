@@ -206,11 +206,17 @@ class PagesController extends Controller
          */
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetExLink?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=&offset=&categoryId=659&slug=&key=');
-        curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $output = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE);
+        $response = curl_exec($ch);
+        if ($response === false)
+            $response = curl_error($ch);
         curl_close($ch);
-        $link = json_decode($output, TRUE);
+        $externalLinks = json_decode($response, TRUE);
 
         return view('pages.index', [
             'dateNow' => $dateNow,
@@ -225,7 +231,7 @@ class PagesController extends Controller
             'cityAnnouncements' => $cityAnnouncements,
             'agendas' => $agendas,
             'cityNews' => $cityNews,
-            'link' => $link,
+            'externalLinks' => $externalLinks,
             'string_limit' => [$this, 'string_limit'],
         ]);
     }
