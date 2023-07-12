@@ -31,6 +31,14 @@
 <link rel="stylesheet" href="{{ asset('assets/css/icons.css') }}" />
 {{-- END::Plugins CSS --}}
 
+{{-- BEGIN::Data Tables CSS --}}
+<link href="{{ asset('assets/datatables/datatables.min.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/datatables/jqueryui/themes/base/jquery-ui.min.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/datatables/datatables/css/dataTables.jqueryui.min.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/datatables/responsive/css/responsive.jqueryui.min.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/datatables/buttons/css/buttons.jqueryui.min.css') }}" rel="stylesheet" />
+{{-- END::Data Tables CSS --}}
+
 {{-- BEGIN::Canonical --}}
 <link rel="canonical" href="https://diskominfo.depok.go.id" />
 {{-- END::Canonical --}}

@@ -3,8 +3,11 @@
     <div class="container">
         <!-- Logo container-->
         <a class="logo pl-0" href="/">
-            <img src="{{ asset('assets/images/logo-dark.png') }}" class="inline-block dark:hidden" alt="Logo">
-            <img src="{{ asset('assets/images/logo-light.png') }}" class="hidden dark:inline-block" alt="Logo">
+            <span class="inline-block dark:hidden">
+                <img src="{{ asset('assets/images/logo-dark.png') }}" class="l-dark" height="24" alt="Logo">
+                <img src="{{ asset('assets/images/logo-light.png') }}" class="l-light" height="24" alt="Logo">
+            </span>
+            <img src="{{ asset('assets/images/logo-light.png') }}" height="24" class="hidden dark:inline-block" alt="Logo">
         </a>
 
         <!-- End Logo container-->
@@ -24,7 +27,7 @@
 
         <div id="navigation">
             <!-- Navigation Menu-->
-            <ul class="navigation-menu justify-end">
+            <ul class="navigation-menu nav-light justify-end">
                 <li class="has-submenu parent-menu-item">
                     <a href="javascript:void(0)">Profil</a><span class="menu-arrow"></span>
                     <ul class="submenu">
@@ -76,8 +79,8 @@
                         <li><a href="/kontak/hubungi-kami" class="sub-menu-item">Hubungi Kami</a></li>
                     </ul>
                 </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+            </ul><!--end navigation menu-->
+        </div><!--end navigation-->
+    </div><!--end container-->
+</nav><!--end header-->
 <!-- End Navbar -->

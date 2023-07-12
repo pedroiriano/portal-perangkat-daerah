@@ -23,17 +23,16 @@ Route::get('/informasi/program-unggulan', [InformationsController::class, 'featu
 Route::get('/informasi/inovasi', [InformationsController::class, 'innovation'])->name('innovation');
 Route::get('/informasi/agenda', [InformationsController::class, 'agenda'])->name('agenda');
 
+Route::get('/publikasi/berita', [PublicationsController::class, 'news'])->name('news');
+Route::get('/publikasi/pengumuman', [PublicationsController::class, 'announcement'])->name('announcement');
 Route::get('/publikasi/foto', [PublicationsController::class, 'photo'])->name('photo');
 Route::get('/publikasi/video', [PublicationsController::class, 'video'])->name('video');
-Route::get('/publikasi/pengumuman', [PublicationsController::class, 'announcement'])->name('announcement');
-Route::get('/publikasi/berita', [PublicationsController::class, 'news'])->name('news');
 
-Route::get('/layanan/simpatik', [ServicesController::class, 'simpatik'])->name('simpatik');
-Route::get('/layanan/helpdesk', [ServicesController::class, 'helpdesk'])->name('helpdesk');
+Route::get('/layanan/semua', [ServicesController::class, 'service'])->name('service');
 Route::get('/layanan/regulasi', [ServicesController::class, 'regulation'])->name('regulation');
 
-Route::get('/kontak/hubungi-kami', [ContactsController::class, 'contactUs'])->name('contact-us');
 Route::get('/kontak/kontak-penting', [ContactsController::class, 'importantContact'])->name('important-contact');
+Route::get('/kontak/hubungi-kami', [ContactsController::class, 'contactUs'])->name('contact-us');
 
 Route::get('/berita/detail/{slug}', [NewsController::class, 'news_detail'])->name('news-detail');
 Route::get('/pengumuman/detail/{slug}', [AnnouncementsController::class, 'announcement_detail'])->name('announcement-detail');
