@@ -120,6 +120,6 @@
             </div>
         </div>
     </div>
-</section><!--end section-->
+</section>
 <!-- End -->
 @endsection

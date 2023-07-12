@@ -79,8 +79,8 @@
                         <li><a href="/kontak/hubungi-kami" class="sub-menu-item">Hubungi Kami</a></li>
                     </ul>
                 </li>
-            </ul><!--end navigation menu-->
-        </div><!--end navigation-->
-    </div><!--end container-->
-</nav><!--end header-->
+            </ul>
+        </div>
+    </div>
+</nav>
 <!-- End Navbar -->
