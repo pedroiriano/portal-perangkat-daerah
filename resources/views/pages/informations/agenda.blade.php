@@ -25,7 +25,7 @@
                         Informasi
                     </a>
                     <h5 class="font-semibold text-2xl mt-5">
-                        Program Unggulan
+                        Agenda
                     </h5>
                 </div>
             </div>
@@ -54,42 +54,58 @@
                             <div class="grid grid-cols-1">
                                 <div class="relative p-1 overflow-x-auto block w-full bg-white dark:bg-slate-900">
                                     <div class="container">
-                                        <div class="grid md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden text-center">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10 mx-auto"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-0 right-0 mx-auto text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-university"></i>
+                                        <div class="grid grid-cols-1 mt-8 gap-[30px]">
+                                            <!-- Start Agenda -->
+                                            @if(!empty($generalAgenda))
+                                                @foreach($generalAgenda as $item)
+                                                    @php
+                                                        $startDate = $Carbon::parse($item['TanggalAwal']);
+                                                        $startDate = $startDate->format('d-m-Y');
+                                                        $finishDate = $Carbon::parse($item['TanggalAkhir']);
+                                                        $finishDate = $finishDate->format('d-m-Y');
+                                                    @endphp
+                                                    <div class="group relative rounded-md shadow hover:shadow-lg dark:shadow-gray-800 duration-500 ease-in-out overflow-hidden">
+                                                        <div class="relative overflow-hidden">
+                                                            @if (!empty($item['Media']))
+                                                                <img src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
+                                                                <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
+                                                            @else
+                                                                <img src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="">
+                                                                <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
+                                                            @endif
+                                                        </div>
+                                                        <div class="content p-6 relative">
+                                                            <a class="font-medium block text-indigo-600">
+                                                                Agenda
+                                                            </a>
+                                                            <a class="text-lg font-medium block hover:text-indigo-600 duration-500 ease-in-out mt-2">
+                                                                {{ $item['Title'] }}
+                                                            </a>
+                                                            <p class="text-slate-400 mt-3 mb-4">
+                                                                {!! $item['Deskripsi'] !!}
+                                                            </p>
+                                                            <div class="text-sm mt-8">
+                                                                <i class="uil uil-users-alt mr-4"></i>
+                                                                Penyelenggara: {{ $item['Penyelenggara'] }} <br>
+                                                                <i class="uil uil-phone mr-4"></i>
+                                                                {{ $item['PIC'] }} <br>
+                                                                <i class="uil uil-building mr-4"></i>
+                                                                {{ $item['Alamat'] }} <br><br>
+                                                            </div>
+                                                            <ul class="pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center list-none text-slate-400">
+                                                                <li class="flex items-center mr-4">
+                                                                    <i class="uil uil-clock text-lg leading-none mr-2 text-slate-900 dark:text-white"></i>
+                                                                    <span>{{ $startDate }} s.d. {{ $finishDate }}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="https://depok.go.id/" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out" target="_blank">
-                                                        Layanan DSW
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Layanan Pemerintah Kota Depok.
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
-
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden text-center">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10 mx-auto"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-0 right-0 mx-auto text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-building"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="{{ route('service') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                                        Layanan Perangkat Daerah
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Layanan yang diberikan oleh Perangkat Daerah.
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
+                                                @endforeach
+                                            @endif
+                                            <!-- End Agenda -->
                                         </div>
-                                    </div><!--end container-->
+                                        {{ $generalAgenda->onEachSide(2)->links('vendor.pagination.custom-tailwind') }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -98,76 +114,58 @@
                             <div class="grid grid-cols-1">
                                 <div class="relative p-1 overflow-x-auto block w-full bg-white dark:bg-slate-900">
                                     <div class="container">
-                                        <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-8 text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-books"></i>
+                                        <div class="grid grid-cols-1 mt-8 gap-[30px]">
+                                            <!-- Start Agenda -->
+                                            @if(!empty($specialAgenda))
+                                                @foreach($specialAgenda as $item)
+                                                    @php
+                                                        $startDate = $Carbon::parse($item['TanggalAwal']);
+                                                        $startDate = $startDate->format('d-m-Y');
+                                                        $finishDate = $Carbon::parse($item['TanggalAkhir']);
+                                                        $finishDate = $finishDate->format('d-m-Y');
+                                                    @endphp
+                                                    <div class="group relative rounded-md shadow hover:shadow-lg dark:shadow-gray-800 duration-500 ease-in-out overflow-hidden">
+                                                        <div class="relative overflow-hidden">
+                                                            @if (!empty($item['Media']))
+                                                                <img src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
+                                                                <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
+                                                            @else
+                                                                <img src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="">
+                                                                <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
+                                                            @endif
+                                                        </div>
+                                                        <div class="content p-6 relative">
+                                                            <a class="font-medium block text-indigo-600">
+                                                                Agenda
+                                                            </a>
+                                                            <a class="text-lg font-medium block hover:text-indigo-600 duration-500 ease-in-out mt-2">
+                                                                {{ $item['Title'] }}
+                                                            </a>
+                                                            <p class="text-slate-400 mt-3 mb-4">
+                                                                {!! $item['Deskripsi'] !!}
+                                                            </p>
+                                                            <div class="text-sm mt-8">
+                                                                <i class="uil uil-users-alt mr-4"></i>
+                                                                Penyelenggara: {{ $item['Penyelenggara'] }} <br>
+                                                                <i class="uil uil-phone mr-4"></i>
+                                                                {{ $item['PIC'] }} <br>
+                                                                <i class="uil uil-building mr-4"></i>
+                                                                {{ $item['Alamat'] }} <br><br>
+                                                            </div>
+                                                            <ul class="pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center list-none text-slate-400">
+                                                                <li class="flex items-center mr-4">
+                                                                    <i class="uil uil-clock text-lg leading-none mr-2 text-slate-900 dark:text-white"></i>
+                                                                    <span>{{ $startDate }} s.d. {{ $finishDate }}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="{{ route('product') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                                        Dokumen Produk
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta.
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
-
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-8 text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-analysis"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="{{ route('featured') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                                        Program Unggulan
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem!
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
-
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-8 text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-brain"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="{{ route('innovation') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                                        Inovasi
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Crum.
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
-
-                                            <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
-                                                <div class="relative overflow-hidden text-transparent -m-3">
-                                                    <i data-feather="hexagon" class="h-24 w-24 fill-indigo-600/5 group-hover:fill-white/10"></i>
-                                                    <div class="absolute top-2/4 -translate-y-2/4 left-8 text-indigo-600 rounded-xl group-hover:text-white transition-all duration-500 ease-in-out text-3xl flex align-middle justify-center items-center">
-                                                        <i class="uil uil-calendar-alt"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="mt-6">
-                                                    <a href="{{ route('agenda') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                                        Agenda
-                                                    </a>
-                                                    <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non?
-                                                    </p>
-                                                </div>
-                                            </div><!--end feature-->
+                                                @endforeach
+                                            @endif
+                                            <!-- End Agenda -->
                                         </div>
-                                    </div><!--end container-->
+                                        {{ $specialAgenda->onEachSide(2)->links('vendor.pagination.custom-tailwind') }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
