@@ -7,18 +7,18 @@
 <script src="{{ asset('assets/libs/feather-icons/feather.min.js') }}"></script>
 <script src="{{ asset('assets/js/plugins.init.js') }}"></script>
 <script src="{{ asset('assets/js/app.js') }}"></script>
-<script src="assets/datatables/DataTables-1.13.5/js/jquery.dataTables.min.js"></script>
-<script src="assets/datatables/DataTables-1.13.5/js/dataTables.jqueryui.min.js"></script>
-<script src="assets/datatables/Responsive-2.5.0/js/dataTables.responsive.min.js"></script>
-<script src="assets/datatables/Responsive-2.5.0/js/responsive.jqueryui.min.js"></script>
-<script src="assets/datatables/Buttons-2.4.0/js/dataTables.buttons.min.js"></script>
-<script src="assets/datatables/Buttons-2.4.0/js/buttons.jqueryui.min.js"></script>
-<script src="assets/datatables/Buttons-2.4.0/js/buttons.html5.min.js"></script>
-<script src="assets/datatables/Buttons-2.4.0/js/buttons.print.min.js"></script>
-<script src="assets/datatables/Buttons-2.4.0/js/buttons.colVis.min.js"></script>
-<script src="assets/datatables/JSZip-3.10.1/jszip.min.js"></script>
-<script src="assets/datatables/pdfmake-0.2.7/pdfmake.min.js"></script>
-<script src="assets/datatables/pdfmake-0.2.7/vfs_fonts.js"></script>
+<script src="{{ asset('assets/datatables/datatables/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/datatables/js/dataTables.jqueryui.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/responsive/js/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/responsive/js/responsive.jqueryui.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/buttons/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/buttons/js/buttons.jqueryui.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/buttons/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/buttons/js/buttons.print.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/jszip/jszip.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/pdfmake/pdfmake.min.js') }}"></script>
+<script src="{{ asset('assets/datatables/pdfmake/vfs_fonts.js') }}"></script>
 <script>
     $(document).ready(function() {
         var table = $('#example').DataTable( {

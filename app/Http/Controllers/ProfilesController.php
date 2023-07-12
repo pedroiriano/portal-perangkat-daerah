@@ -60,7 +60,6 @@ class ProfilesController extends Controller
             $response = curl_error($ch);
         curl_close($ch);
         $legal = json_decode($response, TRUE);
-
         
         return view('pages.profiles.legal', compact('legal'));
     }

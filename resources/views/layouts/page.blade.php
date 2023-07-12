@@ -4,7 +4,7 @@
     @include('includes.page-meta')
     @stack('css')
 </head>
-<body onload="startTime()" class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+<body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
     @include('includes.page-navbar')
     @yield('content')
     @include('includes.page-footer')
