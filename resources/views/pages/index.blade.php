@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-6">
-                                        <a href="service.html" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
+                                        <a href="{{ route('service') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
                                             Layanan Perangkat Daerah
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
@@ -175,7 +175,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-6">
-                                        <a href="product-document.html" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
+                                        <a href="{{ route('product') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
                                             Dokumen Produk
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
@@ -192,7 +192,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-6">
-                                        <a href="featured-program.html" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
+                                        <a href="{{ route('featured') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
                                             Program Unggulan
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
@@ -209,7 +209,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-6">
-                                        <a href="innovation.html" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
+                                        <a href="{{ route('innovation') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
                                             Inovasi
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
@@ -226,7 +226,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-6">
-                                        <a href="agenda.html" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
+                                        <a href="{{ route('agenda') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
                                             Agenda
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">

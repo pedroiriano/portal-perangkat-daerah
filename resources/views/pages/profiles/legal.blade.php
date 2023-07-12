@@ -40,13 +40,13 @@
                             background-color: #333;
                             color: #fff;
                         }
-                    
+
                         .ui-widget-content {
                             background-color: #444;
                             color: #fff;
                         }
                     </style>
-                    
+
                     <table id="example" class="display" style="width:100%">
                         <thead>
                             <tr>
@@ -63,27 +63,27 @@
                             </tr>
                         </tfoot>
                         @if(!empty($legal))
-                            <tbody>
-                                @foreach($legal as $item)
-                                <tr>
-                                    <td class="text-center">
-                                        <i class="uil uil-document-info" style="font-size:24px"></i>
-                                    </td>
-                                    <td>
-                                        @if (strlen($item['title']) >= 75)
-                                        {{ strip_tags(substr($item['title'],0, 75). '...') }}
-                                        @else
-                                            {{ $item['title'] }}
-                                        @endif
-                                    </td>
-                                    <td class="text-center">
-                                        <a href="https://cms.depok.go.id/upload/file/{{ $item['uploaddokumen'] }}"target="_blank">
-                                            <i class="uil uil-file-download" style="font-size:24px"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
+                        <tbody>
+                            @foreach($legal as $item)
+                            <tr>
+                                <td class="text-center">
+                                    <i class="uil uil-document-info" style="font-size:24px"></i>
+                                </td>
+                                <td>
+                                    @if (strlen($item['title']) >= 75)
+                                    {{ strip_tags(substr($item['title'],0, 75). '...') }}
+                                    @else
+                                        {{ $item['title'] }}
+                                    @endif
+                                </td>
+                                <td class="text-center">
+                                    <a href="https://cms.depok.go.id/upload/file/{{ $item['uploaddokumen'] }}"target="_blank">
+                                        <i class="uil uil-file-download" style="font-size:24px"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
                         @endif
                     </table>
                 </div>
@@ -101,7 +101,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/visi-misi" class="font-semibold hover:text-indigo-600" aria-selected="false">
@@ -109,7 +109,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/landasan-hukum" class="font-semibold hover:text-indigo-600" aria-selected="true">
@@ -125,7 +125,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/tupoksi" class="font-semibold hover:text-indigo-600" aria-selected="false">

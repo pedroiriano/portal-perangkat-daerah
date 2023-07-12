@@ -24,7 +24,7 @@
                         Profil
                     </a>
                     <h5 class="font-semibold text-2xl mt-5">
-                        Tentang {{ $shortWorkUnits }}
+                        Tentang Kami
                     </h5>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/visi-misi" class="font-semibold hover:text-indigo-600" aria-selected="false">
@@ -65,7 +65,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/landasan-hukum" class="font-semibold hover:text-indigo-600" aria-selected="false">
@@ -81,7 +81,7 @@
                             </a>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
                             <a href="/profil/tupoksi" class="font-semibold hover:text-indigo-600" aria-selected="false">
