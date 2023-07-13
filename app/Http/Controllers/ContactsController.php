@@ -22,11 +22,11 @@ class ContactsController extends Controller
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
         $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE);
         $response = curl_exec($ch);
-        if ($response === false) 
+        if ($response === false)
             $response = curl_error($ch);
         curl_close($ch);
         $contactUs = json_decode($response, TRUE);
-        
+
         return view('pages.contacts.contact-us', compact('contactUs')); */
         return view('pages.contacts.contact-us');
     }
@@ -42,7 +42,7 @@ class ContactsController extends Controller
         curl_setopt($ch, CURLOPT_TIMEOUT, 10);
         $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE);
         $response = curl_exec($ch);
-        if ($response === false) 
+        if ($response === false)
             $response = curl_error($ch);
         curl_close($ch);
         $importantContacts = json_decode($response, TRUE);
