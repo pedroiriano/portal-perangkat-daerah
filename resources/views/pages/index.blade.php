@@ -15,12 +15,6 @@
                                 <div class="grid grid-cols-1">
                                     <div class="text-center">
                                         {!! $slider['Description'] !!}
-                                        {{-- <h1 class="font-semibold text-white lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5">
-                                            Judul Slider
-                                        </h1>
-                                        <p class="text-white/70 text-lg max-w-xl mx-auto">
-                                            Deskripsi Slider yang menjelaskan secara singkat arti dari Judul dan Gambar Slider.
-                                        </p> --}}
                                     </div>
                                 </div>
                             </div>
@@ -55,8 +49,6 @@
                     </p>
                 </div>
             </div>
-            <!--end feature content-->
-
             <div class="flex">
                 <div class="flex align-middle justify-center items-center min-w-[56px] h-[56px] bg-indigo-600/5 border-2 border-indigo-600/20 text-indigo-600 rounded-lg text-xl shadow-sm dark:shadow-gray-800">
                     <i class="uil uil-compass"></i>
@@ -70,8 +62,6 @@
                     </p>
                 </div>
             </div>
-            <!--end feature content-->
-
             <div class="flex">
                 <div class="flex align-middle justify-center items-center min-w-[56px] h-[56px] bg-indigo-600/5 border-2 border-indigo-600/20 text-indigo-600 rounded-lg text-xl shadow-sm dark:shadow-gray-800">
                     <i class="uil uil-cloud-sun"></i>
@@ -85,10 +75,9 @@
                     </p>
                 </div>
             </div>
-            <!--end feature content-->
-        </div><!--end grid-->
-    </div><!--end container-->
-</section><!--end section-->
+        </div>
+    </div>
+</section>
 <!-- End Widget -->
 
 <!-- Start Service & Information -->
@@ -138,7 +127,7 @@
                                             Layanan Pemerintah Kota Depok.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
 
                                 <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden text-center">
                                     <div class="relative overflow-hidden text-transparent -m-3">
@@ -149,15 +138,15 @@
                                     </div>
                                     <div class="mt-6">
                                         <a href="{{ route('service') }}" class="text-lg font-medium group-hover:text-white transition-all duration-500 ease-in-out">
-                                            Layanan Perangkat Daerah
+                                            Layanan
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                            Layanan yang diberikan oleh Perangkat Daerah.
+                                            Layanan yang diberikan oleh {{ $shortWorkUnits }}.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
                             </div>
-                        </div><!--end container-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,10 +168,10 @@
                                             Dokumen Produk
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta.
+                                            Dokumen yang berupa Produk Hukum, Sakip dan Lakip {{ $shortWorkUnits }}.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
 
                                 <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
                                     <div class="relative overflow-hidden text-transparent -m-3">
@@ -196,10 +185,10 @@
                                             Program Unggulan
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem!
+                                            Program yang dikembangkan oleh {{ $shortWorkUnits }} untuk mencapai keunggulan yang ingin dicapai.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
 
                                 <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
                                     <div class="relative overflow-hidden text-transparent -m-3">
@@ -213,10 +202,10 @@
                                             Inovasi
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Crum.
+                                            Sarana {{ $shortWorkUnits }} untuk mendorong terciptanya penyelenggaraan Pemerintahan dan pembangunan Masyarakat yang lebih produktif, efisien dan efektif.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
 
                                 <div class="group relative p-6 shadow dark:shadow-gray-800 hover:shadow-md dark:hover:shadow-gray-700 hover:bg-indigo-600 dark:hover:bg-indigo-600 transition-all duration-500 ease-in-out rounded-xl bg-white dark:bg-slate-900 overflow-hidden">
                                     <div class="relative overflow-hidden text-transparent -m-3">
@@ -230,12 +219,12 @@
                                             Agenda
                                         </a>
                                         <p class="text-slate-400 group-hover:text-white/50 transition-all duration-500 ease-in-out mt-3">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non?
+                                            Jadwal Kegiatan {{ $shortWorkUnits }}.
                                         </p>
                                     </div>
-                                </div><!--end feature-->
+                                </div>
                             </div>
-                        </div><!--end container-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -274,7 +263,7 @@
 
                                 <div>
                                     <div class="grid grid-cols-1 gap-4">
-                                        <!-- Start Latest News -->
+                                        <!-- Start Latest News on Mobile -->
                                         @if (!empty($latestNews))
                                             @foreach ($latestNews as $latestNew)
                                                 <div class="group items-center relative overflow-hidden md:hidden">
@@ -306,7 +295,7 @@
                                         @else
                                             Koneksi API Terputus
                                         @endif
-                                        <!-- End Latest News -->
+                                        <!-- End Latest News on Mobile -->
 
                                         <!-- Start News -->
                                         @if (!empty($news))
@@ -344,7 +333,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--end container-->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -381,13 +370,13 @@
                                     Koneksi API Terputus
                                 @endif
                             </div>
-                        </div><!--end container-->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section><!--end section-->
+</section>
 <!-- End Service & Information -->
 
 <!-- Start City News -->
@@ -403,11 +392,11 @@
                 </p>
             </div>
             <div class="lg:col-span-4 md:col-span-6 md:text-right hidden md:block">
-                <a href="https://berita.depok.go.id/" class="btn btn-link text-slate-400 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                <a href="https://berita.depok.go.id/" class="btn btn-link text-slate-400 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out" target="_blank">
                     Semua Berita <i class="uil uil-arrow-right align-middle"></i>
                 </a>
             </div>
-        </div><!--end grid-->
+        </div>
 
         <div class="grid md:grid-cols-12 grid-cols-1 mt-8 gap-[30px]">
             <div class="lg:col-span-8 md:col-span-6">
@@ -524,8 +513,8 @@
                 </div>
             </div>
         </div>
-    </div><!--end container-->
-</section><!--end section-->
+    </div>
+</section>
 <!-- End City News -->
 
 <!-- Start External Link -->
@@ -535,11 +524,11 @@
             <h3 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
                 Link Terkait
             </h3>
-        </div><!--end grid-->
+        </div>
 
         <div class="grid grid-cols-1 mt-2 md:mt-6 relative">
             <div class="tiny-five-item">
-                <!-- Slide -->
+                <!-- Start Slide -->
                 @if (!empty($externalLinks))
                     @php
                         $count = 0;
@@ -563,11 +552,11 @@
                 @else
                     Koneksi API Terputus
                 @endif
-                <!-- Slide -->
+                <!-- End Slide -->
             </div>
-        </div><!--end grid-->
-    </div><!--end container-->
-</section><!--end section-->
+        </div>
+    </div>
+</section>
 <!-- End External Link -->
 @endsection
 
