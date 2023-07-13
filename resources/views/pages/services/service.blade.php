@@ -24,7 +24,7 @@
                         Layanan
                     </a>
                     <h5 class="font-semibold text-2xl mt-5">
-                        Regulasi Layanan {{ $shortWorkUnits }}
+                        Layanan {{ $shortWorkUnits }}
                     </h5>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     </h5>
                     <div class="flex items-center justify-center mt-8">
                         <div class="ml-3">
-                            <a href="{{ route('service') }}" class="font-semibold hover:text-indigo-600" aria-selected="false">
+                            <a href="{{ route('service') }}" class="font-semibold hover:text-indigo-600" aria-selected="true">
                                 Layanan
                             </a>
                         </div>
@@ -137,7 +137,7 @@
 
                     <div class="flex items-center justify-center mt-4">
                         <div class="ml-3">
-                            <a href="{{ route('regulation') }}" class="font-semibold hover:text-indigo-600" aria-selected="true">
+                            <a href="{{ route('regulation') }}" class="font-semibold hover:text-indigo-600" aria-selected="false">
                                 Regulasi
                             </a>
                         </div>
