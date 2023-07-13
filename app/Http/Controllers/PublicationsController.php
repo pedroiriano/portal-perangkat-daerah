@@ -15,7 +15,7 @@ class PublicationsController extends Controller
     {
         $ch = curl_init();
         // curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetGallery?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=3&offset=&categoryId=659&slug=&key=');
-        curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetGallery?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=3&offset=&categoryId=&slug=&key=');
+        curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/GetGallery?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=&offset=&categoryId=&slug=&key=');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
