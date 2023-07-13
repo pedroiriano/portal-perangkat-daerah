@@ -58,7 +58,7 @@
                                                 <a href="{{ $item['Instagram'] }}" class="btn btn-icon btn-sm border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white" target="_blank"><i data-feather="instagram" class="h-4 w-4"></i></a>
                                             </li>
                                             <li class="inline">
-                                                <a href="{{ $item['Mobile'] }}" class="btn btn-icon btn-sm border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white" target="_blank"><i data-feather="phone" class="h-4 w-4"></i></a>
+                                                <a href="tel:{{ $item['Mobile'] }}" class="btn btn-icon btn-sm border border-gray-100 dark:border-gray-800 rounded-md hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 hover:text-white" target="_blank"><i data-feather="phone" class="h-4 w-4"></i></a>
                                             </li>
                                         </ul>
                                     </div>

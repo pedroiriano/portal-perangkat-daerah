@@ -35,63 +35,67 @@
         <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
             <div class="lg:col-span-8 md:col-span-6">
                 <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
-                    <div class="text-center px-6 mt-6">
-                        <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
-                            <i class="uil uil-phone"></i>
-                        </div>
-                        <div class="content mt-7">
-                            <h5 class="title h5 text-xl font-medium">
-                                Telepon
-                            </h5>
-                            <p class="text-slate-400 mt-3">
-                                Nomor Telepon Perangkat Daerah.
-                            </p>
-                            <div class="mt-5">
-                                <a href="tel:+622129402276" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                    021-29402276
-                                </a>
+                    @if (!empty($generalInformations))
+                        @foreach ($generalInformations as $generalInformation)
+                            <div class="text-center px-6 mt-6">
+                                <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+                                    <i class="uil uil-phone"></i>
+                                </div>
+                                <div class="content mt-7">
+                                    <h5 class="title h5 text-xl font-medium">
+                                        Telepon
+                                    </h5>
+                                    <p class="text-slate-400 mt-3">
+                                        Nomor Telepon {{ $shortWorkUnits }}.
+                                    </p>
+                                    <div class="mt-5">
+                                        <a href="tel:{{ $generalInformation['Telp'] }}" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                                            {{ $generalInformation['Telp'] }}
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="text-center px-6 mt-6">
-                        <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
-                            <i class="uil uil-envelope"></i>
-                        </div>
-                        <div class="content mt-7">
-                            <h5 class="title h5 text-xl font-medium">
-                                Email
-                            </h5>
-                            <p class="text-slate-400 mt-3">
-                                Alamat Surat Elektronik Perangkat Daerah
-                            </p>
-                            <div class="mt-5">
-                                <a href="mailto:diskominfo@depok.go.id" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                    diskominfo@depok.go.id
-                                </a>
+                            <div class="text-center px-6 mt-6">
+                                <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+                                    <i class="uil uil-envelope"></i>
+                                </div>
+                                <div class="content mt-7">
+                                    <h5 class="title h5 text-xl font-medium">
+                                        Email
+                                    </h5>
+                                    <p class="text-slate-400 mt-3">
+                                        Alamat Surat Elektronik {{ $shortWorkUnits }}
+                                    </p>
+                                    <div class="mt-5">
+                                        <a href="mailto:{{ $generalInformation['Email'] }}" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                                            {{ $generalInformation['Email'] }}
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="text-center px-6 mt-6">
-                        <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
-                            <i class="uil uil-map-marker"></i>
-                        </div>
-                        <div class="content mt-7">
-                            <h5 class="title h5 text-xl font-medium">
-                                Lokasi
-                            </h5>
-                            <p class="text-slate-400 mt-3">
-                                Gedung Dibaleka II Komplek Balaikota Depok Lantai 7,<br> Jl. Margonda Raya No. 54 Depok
-                            </p>
-                            <div class="mt-5">
-                                <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.994475252824!2d106.81847407411628!3d-6.394712562543299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec086a724fed%3A0xe794929dd620de0c!2sDinas%20Komunikasi%20dan%20Informatika%20(Diskominfo)%20Kota%20Depok!5e0!3m2!1sen!2sid!4v1688904945370!5m2!1sen!2sid"
-                                data-type="iframe" loading="lazy" class="video-play-icon read-more lightbox btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
-                                Lihat di Google Map
-                            </a>
+                            <div class="text-center px-6 mt-6">
+                                <div class="w-20 h-20 bg-indigo-600/5 text-indigo-600 rounded-xl text-3xl flex align-middle justify-center items-center shadow-sm dark:shadow-gray-800 mx-auto">
+                                    <i class="uil uil-map-marker"></i>
+                                </div>
+                                <div class="content mt-7">
+                                    <h5 class="title h5 text-xl font-medium">
+                                        Lokasi
+                                    </h5>
+                                    <p class="text-slate-400 mt-3">
+                                        {{ $generalInformation['Alamat'] }}
+                                    </p>
+                                    <div class="mt-5">
+                                        <a href="{{ $generalInformation['URLmaps'] }}"
+                                        data-type="iframe" loading="lazy" class="video-play-icon read-more lightbox btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                                        Lihat di Google Map
+                                    </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
 
