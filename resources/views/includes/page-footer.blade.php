@@ -10,7 +10,7 @@
                                 <img src="{{ asset('assets/images/logo-light.png') }}" alt="">
                             </a>
                             <p class="mt-6 text-gray-300">
-                                Website Resmi Perangkat Daerah Kota Depok. Silakan kunjungi Media Sosial Kami untuk informasi lainnya.
+                                Website Resmi {{ $shortWorkUnits }}. Silakan kunjungi Media Sosial Kami untuk informasi lainnya.
                             </p>
                             <ul class="list-none mt-6">
                                 <li class="inline">
@@ -33,86 +33,86 @@
                                         <i class="uil uil-youtube align-middle" title="youtube"></i>
                                     </a>
                                 </li>
-                            </ul><!--end icon-->
-                        </div><!--end col-->
+                            </ul>
+                        </div>
 
                         <div class="lg:col-span-2 md:col-span-6">
                             <h5 class="tracking-[1px] text-gray-100 font-semibold">Profil</h5>
                             <ul class="list-none footer-list mt-6">
                                 <li>
-                                    <a href="about.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('about') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Tentang
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="vision-mission.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('vision') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Visi dan Misi
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="legal-foundation.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('legal') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Landasan Hukum
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="organizational-structure.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('organization') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Struktur Organisasi
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="main-duties.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('duty') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Tupoksi
                                     </a>
                                 </li>
                             </ul>
-                        </div><!--end col-->
+                        </div>
 
                         <div class="lg:col-span-2 md:col-span-6">
                             <h5 class="tracking-[1px] text-gray-100 font-semibold">Informasi</h5>
                             <ul class="list-none footer-list mt-6">
                                 <li>
-                                    <a href="product-document.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('product') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Dokumen Produk
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="featured-program.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('featured') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Program Unggulan
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="innovation.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('innovation') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Inovasi
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="agenda.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('agenda') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Agenda
                                     </a>
                                 </li>
                             </ul>
-                        </div><!--end col-->
+                        </div>
 
                         <div class="lg:col-span-2 md:col-span-6">
                             <h5 class="tracking-[1px] text-gray-100 font-semibold">Publikasi</h5>
                             <ul class="list-none footer-list mt-6">
                                 <li>
-                                    <a href="news.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('news') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Berita
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="announcement.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('announcement') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Pengumuman
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="photo.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('photo') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Galeri Foto
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="video.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('video') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Galeri Video
                                     </a>
                                 </li>
@@ -122,39 +122,39 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div><!--end col-->
+                        </div>
 
                         <div class="lg:col-span-2 md:col-span-6">
                             <h5 class="tracking-[1px] text-gray-100 font-semibold">Layanan</h5>
                             <ul class="list-none footer-list mt-6">
                                 <li>
-                                    <a href="service.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('service') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Layanan
                                     </a>
                                 </li>
                                 <li class="mt-[10px]">
-                                    <a href="regulation.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
+                                    <a href="{{ route('regulation') }}" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">
                                         <i class="uil uil-angle-right-b me-1"></i> Regulasi
                                     </a>
                                 </li>
                             </ul>
-                        </div><!--end col-->
-                    </div><!--end grid-->
-                </div><!--end col-->
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div><!--end grid-->
-    </div><!--end container-->
+        </div>
+    </div>
 
     <div class="py-[30px] px-0 border-t border-slate-800">
         <div class="container text-center">
             <div class="grid md:grid-cols-2 items-center">
                 <div class="md:text-left text-center">
                     <p class="mb-0">
-                        © <script>document.write(new Date().getFullYear())</script> Perangkat Daerah. Didesain dengan <i class="mdi mdi-heart text-red-600"></i> oleh <a href="https://diskominfo.depok.go.id/" target="_blank" class="text-reset">Diskominfo</a>.
+                        © <script>document.write(new Date().getFullYear())</script> {{ $shortWorkUnits }}. Didesain dengan <i class="mdi mdi-heart text-red-600"></i> oleh <a href="https://diskominfo.depok.go.id/" target="_blank" class="text-reset">Diskominfo</a>.
                     </p>
                 </div>
-            </div><!--end grid-->
-        </div><!--end container-->
+            </div>
+        </div>
     </div>
-</footer><!--end footer-->
+</footer>
 <!-- Footer End -->
