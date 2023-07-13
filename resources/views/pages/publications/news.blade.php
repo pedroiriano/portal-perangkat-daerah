@@ -1,97 +1,129 @@
 @extends('layouts.page')
 
 @section('content')
-@include('includes.float')
-<section class="bg-white py-10">
-    <div class="container px-5 mt-10">
-        <div class="row gx-5">
-            @include('includes.sidenav-publication')
-            <div class="col-lg-9">
-                @inject('Carbon', 'Carbon\Carbon')
-                <h1 class="mb-4">Berita</h1>
-                @if (!empty($latestNews))
-                    @foreach ($latestNews as $latestNew)
-                        <a class="card post-preview post-preview-featured lift mb-5 overflow-hidden" href="/berita/detail/{{ $latestNew['slug_title'] }}">
-                            @php
-                                $publishDate = $Carbon::parse($latestNew['tgl_publish']);
-                                $publishDate = $publishDate->format('d-m-Y');
-                            @endphp
-                            <div class="row g-0">
-                                <div class="col-lg-5">
-                                    @if (!empty($latestNew['lampiran']))
-                                        <div class="post-preview-featured-img" style="background-image: url('https://cms.depok.go.id/upload/{{ $latestNew['lampiran'] }}')">
-                                        </div>
-                                    @else
-                                        <div class="post-preview-featured-img" style="background-image: url({{ asset('images/page/news.jpg') }})">
-                                        </div>
-                                    @endif
-                                </div>
-                                <div class="col-lg-7">
-                                    <div class="card-body">
-                                        <div class="py-5">
-                                            <h5 class="card-title">{{ $latestNew['title'] }}</h5>
-                                            <p class="card-text">{{ strip_tags(substr($latestNew['content'],0, 120). '...') }}</p>
-                                        </div>
-                                        <hr />
-                                        <div class="post-preview-meta">
-                                            <div class="post-preview-meta-details">
-                                                <div class="post-preview-meta-details-name">DISKOMINFO Kota Depok</div>
-                                                <div class="post-preview-meta-details-date">{{ $publishDate }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    @endforeach
-                    @else
-                    <div class="alert alert-danger d-flex align-items-center" role="alert">
-                        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                        <div>
-                            Koneksi API Terputus
-                        </div>
-                    </div>
-                @endif
-                <div class="row gx-5">
-                    @if(!empty($news))
-                        @foreach($news as $item)
-                            <div class="col-md-6 col-xl-4 mb-5">
+@inject('Carbon', 'Carbon\Carbon')
+<!-- Start Hero -->
+<section class="relative table w-full py-40 lg:py-64 bg-no-repeat bg-center" data-jarallax='{"speed": 0.1}' style="background-image: url({{ asset('assets/images/pages-header.png') }}); background-size: cover;">
+    <div class="absolute inset-0 bg-black opacity-75"></div>
+</section>
+<div class="relative">
+    <div class="shape absolute right-0 sm:-bottom-px -bottom-[2px] left-0 overflow-hidden text-white dark:text-slate-900">
+        <svg class="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- End Hero -->
+
+<!-- Start -->
+<section class="relative md:pb-24 pb-16">
+    <div class="container">
+        <div class="md:flex">
+            <div class="relative lg:w-2/3 w-full -mt-32">
+                <div class="px-6 py-12 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-gray-800 text-center">
+                    <a class="bg-indigo-600/10 text-indigo-600 font-semibold px-2.5 py-0.5 rounded w-fit mx-auto h-5">
+                        Publikasi
+                    </a>
+                    <h5 class="font-semibold text-2xl mt-5">
+                        Berita {{ $shortWorkUnits }}
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div><!--end container-->
+
+    <div class="container md:mt-24 mt-16">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+            <div class="lg:col-span-8 md:col-span-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[30px]">
+                    @if (!empty($allNews))
+                        @foreach ($allNews as $allNew)
+                            <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
                                 @php
-                                    $publishDate = $Carbon::parse($item['tgl_publish']);
+                                    $publishDate = $Carbon::parse($allNew['tgl_publish']);
                                     $publishDate = $publishDate->format('d-m-Y');
                                 @endphp
-                                <a class="card post-preview lift h-100" href="/berita/detail/{{ $item['slug_title'] }}">
-                                    @if (!empty($item['lampiran']))
-                                        <img class="card-img-top" src="https://cms.depok.go.id/upload/{{ $item['lampiran'] }}" alt="Gambar Berita" />
-                                    @else
-                                        <img class="card-img-top" src="{{ asset('images/page/news.jpg') }}" alt="Gambar Berita" />
-                                    @endif
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $item['slug_title'] }}</h5>
-                                        <p class="card-text">
-                                            {{ strip_tags(substr($item['content'],0, 120). '...') }}
-                                        </p>
+                                @if (!empty($allNew['lampiran']))
+                                    <img loading="lazy" src="https://cms.depok.go.id/upload/{{ $allNew['lampiran'] }}" alt="News">
+                                @else
+                                    <img loading="lazy" src="{{ asset('assets/images/page/news.jpg') }}" alt="News">
+                                @endif
+                                <div class="content p-6">
+                                    <a href="/berita/detail/{{ $allNew['slug_title'] }}" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">
+                                        {{ $allNew['title'] }}
+                                    </a>
+                                    <p class="text-slate-400 mt-3">
+                                        {{ strip_tags(substr($allNew['content'],0, 120). '...') }}
+                                    </p>
+                                    <ul class="pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center list-none text-slate-400">
+                                        <li class="flex items-center mr-4">
+                                            <i class="uil uil-clock text-lg leading-none mr-2 text-slate-900 dark:text-white"></i>
+                                            <span>{{ $publishDate }}</span>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-4">
+                                        <a href="/berita/detail/{{ $allNew['slug_title'] }}" class="btn btn-link font-normal hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
+                                            Selengkapnya <i class="uil uil-arrow-right"></i>
+                                        </a>
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="post-preview-meta">
-                                            <div class="post-preview-meta-details">
-                                                <div class="post-preview-meta-details-name">DISKOMINFO Kota Depok</div>
-                                                <div class="post-preview-meta-details-date">{{ $publishDate }}</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                </div>
+                            </div><!--blog end-->
                         @endforeach
+                    @else
+                        Koneksi API Terputus
                     @endif
                 </div>
-                {{ $news->links() }}
+                {{ $allNews->onEachSide(2)->links('vendor.pagination.custom-tailwind') }}
+            </div>
+
+            <div class="lg:col-span-4 md:col-span-6">
+                <div class="sticky top-20">
+                    <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
+                        Publikasi
+                    </h5>
+                    <div class="flex items-center justify-center mt-8">
+                        <div class="ml-3">
+                            <a href="/publikasi/berita" class="font-semibold hover:text-indigo-600" aria-selected="true">
+                                Berita
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="/publikasi/pengumuman" class="font-semibold hover:text-indigo-600" aria-selected="false">
+                                Pengumuman
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="/publikasi/foto" class="font-semibold hover:text-indigo-600" aria-selected="false">
+                                Galeri Foto
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="/publikasi/video" class="font-semibold hover:text-indigo-600" aria-selected="false">
+                                Galeri Video
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="https://ppid.depok.go.id/" class="font-semibold hover:text-indigo-600" target="_blank" aria-selected="false">
+                                PPID
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="svg-border-rounded text-light">
-        <!-- Rounded SVG Border-->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor"><path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path></svg>
-    </div>
 </section>
+<!-- End -->
 @endsection
