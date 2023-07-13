@@ -104,10 +104,25 @@ class PublicationsController extends Controller
         $news = json_decode($response, TRUE);
         $news = $this->array_pagination($news);
 
-        return view('pages.publications.news', compact('news', 'latestNews'));
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://cms.depok.go.id/ViewPortal/get_content?siteId='.config("constants.siteId").'&status=ST01&kanalType=K001&limit=&offset=&category=&slug=&key=');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+        $httpCode = curl_getinfo($ch , CURLINFO_HTTP_CODE);
+        $response = curl_exec($ch);
+        if ($response === false) 
+            $response = curl_error($ch);
+        curl_close($ch);
+        $allNews = json_decode($response, TRUE);
+        $allNews = $this->array_pagination($allNews);
+
+        return view('pages.publications.news', compact('news', 'latestNews', 'allNews'));
     }
 
-    private function array_pagination($items, $perPage = 3, $page = null, $options = [])
+    private function array_pagination($items, $perPage = 4, $page = null, $options = [])
     {
         $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
         $items = $items instanceof Collection ? $items : Collection::make($items);
