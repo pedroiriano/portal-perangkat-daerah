@@ -67,10 +67,10 @@
                                                     <div class="group relative rounded-md shadow hover:shadow-lg dark:shadow-gray-800 duration-500 ease-in-out overflow-hidden">
                                                         <div class="relative overflow-hidden">
                                                             @if (!empty($item['Media']))
-                                                                <img src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
+                                                                <img loading="lazy" src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
                                                                 <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
                                                             @else
-                                                                <img src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="">
+                                                                <img loading="lazy" src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="Agenda">
                                                                 <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
                                                             @endif
                                                         </div>
@@ -127,10 +127,10 @@
                                                     <div class="group relative rounded-md shadow hover:shadow-lg dark:shadow-gray-800 duration-500 ease-in-out overflow-hidden">
                                                         <div class="relative overflow-hidden">
                                                             @if (!empty($item['Media']))
-                                                                <img src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
+                                                                <img loading="lazy" src="https://cms.depok.go.id/upload/event/{{ $item['Media'] }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="{{ $item['Title'] }}">
                                                                 <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
                                                             @else
-                                                                <img src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="">
+                                                                <img loading="lazy" src="{{ asset('assets/images/page/agenda.jpg') }}" class="group-hover:scale-110 duration-500 ease-in-out" alt="Agenda">
                                                                 <div class="absolute inset-0 bg-slate-900/50 opacity-0 group-hover:opacity-100 duration-500 ease-in-out"></div>
                                                             @endif
                                                         </div>
