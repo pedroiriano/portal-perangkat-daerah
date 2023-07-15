@@ -4,10 +4,10 @@
         <!-- Logo container-->
         <a class="logo pl-0" href="/">
             <span class="inline-block dark:hidden">
-                <img loading="lazy" src="{{ asset('assets/images/logo-dark.png') }}" class="l-dark" height="24" alt="Logo">
-                <img loading="lazy" src="{{ asset('assets/images/logo-light.png') }}" class="l-light" height="24" alt="Logo">
+                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-dark" height="24" alt="Logo" style="height: 24px"><span class="l-dark text-dark ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
+                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-light" height="24" alt="Logo" style="height: 24px"><span class="l-light text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
             </span>
-            <img loading="lazy" src="{{ asset('assets/images/logo-light.png') }}" height="24" class="hidden dark:inline-block" alt="Logo">
+            <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="hidden dark:inline-block" alt="Logo" style="height: 24px"><span class="hidden dark:inline-block text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
         </a>
 
         <!-- End Logo container-->
