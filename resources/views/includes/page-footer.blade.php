@@ -7,7 +7,7 @@
                     <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                         <div class="lg:col-span-4 md:col-span-12">
                             <a href="#" class="text-[22px] focus:outline-none">
-                                <img src="{{ asset('assets/images/logo-light.png') }}" alt="">
+                                <img loading="lazy" src="{{ asset('assets/images/logo-light.png') }}" alt="Logo">
                             </a>
                             <p class="mt-6 text-gray-300">
                                 Website Resmi {{ $shortWorkUnits }}. Silakan kunjungi Media Sosial Kami untuk informasi lainnya.

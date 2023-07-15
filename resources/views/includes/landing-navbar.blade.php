@@ -4,10 +4,10 @@
         <!-- Logo container-->
         <a class="logo pl-0" href="/">
             <span class="inline-block dark:hidden">
-                <img src="{{ asset('assets/images/logo-dark.png') }}" class="l-dark" height="24" alt="Logo">
-                <img src="{{ asset('assets/images/logo-light.png') }}" class="l-light" height="24" alt="Logo">
+                <img loading="lazy" src="{{ asset('assets/images/logo-dark.png') }}" class="l-dark" height="24" alt="Logo">
+                <img loading="lazy" src="{{ asset('assets/images/logo-light.png') }}" class="l-light" height="24" alt="Logo">
             </span>
-            <img src="{{ asset('assets/images/logo-light.png') }}" height="24" class="hidden dark:inline-block" alt="Logo">
+            <img loading="lazy" src="{{ asset('assets/images/logo-light.png') }}" height="24" class="hidden dark:inline-block" alt="Logo">
         </a>
 
         <!-- End Logo container-->
