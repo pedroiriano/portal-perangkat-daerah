@@ -45,9 +45,9 @@ class AppServiceProvider extends ServiceProvider
 
         $pagesData = array(
             'generalInformations' => $generalInformations,
-            'longWorkUnits' => 'Dinas Komunikasi dan Informatika Kota Depok',
-            'shortWorkUnits' => 'Diskominfo Depok',
-            'webDescriptions' => 'Website Diskominfo Kota Depok merupakan Kanal Media Digital yang Memberikan Informasi mengenai Dinas Komunikasi dan Informatika Kota Depok'
+            'longWorkUnits' => 'Perangkat Daerah Kota Depok',
+            'shortWorkUnits' => 'Perangkat Daerah',
+            'webDescriptions' => 'Portal Perangkat Daerah Kota Depok merupakan Kanal Media Digital yang Memberikan Informasi mengenai Perangkat Daerah Kota Depok'
         );
 
         View::share($pagesData);
