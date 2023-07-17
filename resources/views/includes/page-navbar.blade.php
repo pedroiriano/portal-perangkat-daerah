@@ -2,13 +2,30 @@
 <nav id="topnav" class="defaultscroll is-sticky">
     <div class="container">
         <!-- Logo container-->
-        <a class="logo pl-0" href="/">
-            <span class="inline-block dark:hidden">
-                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-dark" height="24" alt="Logo" style="height: 24px"><span class="l-dark text-dark ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
-                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-light" height="24" alt="Logo" style="height: 24px"><span class="l-light text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
-            </span>
-            <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="hidden dark:inline-block" alt="Logo" style="height: 24px"><span class="hidden dark:inline-block text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
-        </a>
+        @if (!empty($generalInformations))
+            @foreach ($generalInformations as $generalInformation)
+                @php
+                    $domain = $generalInformation['Domain'];
+                    preg_match('/([a-zA-Z0-9-]+)-dev/', $domain, $matches);
+                    $result = $matches[1];
+                @endphp
+                <a class="logo pl-0" href="/">
+                    <span class="inline-block dark:hidden">
+                        <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-dark" height="24" alt="Logo" style="height: 24px"><span class="l-dark text-dark ml-2">{{ $result }}</span>
+                        <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-light" height="24" alt="Logo" style="height: 24px"><span class="l-light text-white ml-2">{{ $result }}</span>
+                    </span>
+                    <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="hidden dark:inline-block" alt="Logo" style="height: 24px"><span class="hidden dark:inline-block text-white ml-2">{{ $result }}</span>
+                </a>
+            @endforeach
+        @else
+            <a class="logo pl-0" href="/">
+                <span class="inline-block dark:hidden">
+                    <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-dark" height="24" alt="Logo" style="height: 24px"><span class="l-dark text-dark ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
+                    <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" class="l-light" height="24" alt="Logo" style="height: 24px"><span class="l-light text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
+                </span>
+                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="hidden dark:inline-block" alt="Logo" style="height: 24px"><span class="hidden dark:inline-block text-white ml-2">{{ strstr($shortWorkUnits, ' ', true) }}</span>
+            </a>
+        @endif
 
         <!-- End Logo container-->
         <div class="menu-extras">

@@ -22,7 +22,11 @@
                     </div>
                 @endforeach
             @else
-                Koneksi API Terputus
+                <div class="swiper-slide flex items-center overflow-hidden">
+                    <div class="slide-inner slide-bg-image flex items-center bg-center bg-no-repeat" data-background="{{ asset('assets/images/bg-app.png') }}" style="background-size: cover">
+                        <div class="absolute inset-0 bg-black/70"></div>
+                    </div>
+                </div>
             @endif
         </div>
 
