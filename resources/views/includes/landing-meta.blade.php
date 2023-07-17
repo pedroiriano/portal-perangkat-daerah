@@ -15,7 +15,7 @@
         <meta name="email" content="pdzeus83aw@gmail.com" />
         <meta name="version" content="1.0.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com/ https://fonts.googleapis.com/;">
+        <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com/ https://fonts.googleapis.com/">
         {{-- END::Google Search Meta --}}
 
         {{-- BEGIN::CSRF Token --}}
