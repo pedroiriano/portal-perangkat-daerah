@@ -86,6 +86,7 @@
                     <ul class="submenu">
                         <li><a href="/layanan/semua" class="sub-menu-item">Layanan</a></li>
                         <li><a href="/layanan/regulasi" class="sub-menu-item">Regulasi</a></li>
+                        <li><a href="https://esop.depok.go.id/home/survey" class="sub-menu-item" target="_blank">Survei Kepuasan Masyarakat</a></li>
                     </ul>
                 </li>
 
@@ -94,6 +95,7 @@
                     <ul class="submenu">
                         <li><a href="/kontak/kontak-penting" class="sub-menu-item">Kontak Penting</a></li>
                         <li><a href="/kontak/hubungi-kami" class="sub-menu-item">Hubungi Kami</a></li>
+                        <li><a href="https://www.lapor.go.id" class="sub-menu-item" target="_blank">Lapor</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,16 +1,29 @@
 <!-- Footer Start -->
 <footer class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
     <div class="container">
+        @if (!empty($generalInformations))
+            @foreach ($generalInformations as $generalInformation)
+                @php
+                    $domain = $generalInformation['Domain'];
+                    preg_match('/^([a-zA-Z0-9-]+?)(?:-dev)?\./', $domain, $matches);
+                    $result = strtoupper(str_replace('-dev', '', $matches[1]));
+                @endphp
+            @endforeach
+        @else
+            @php
+                $result = $shortWorkUnits;
+            @endphp
+        @endif
         <div class="grid grid-cols-12">
             <div class="col-span-12">
                 <div class="py-[60px] px-0">
                     <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                         <div class="lg:col-span-4 md:col-span-12">
                             <a href="/" class="text-[22px] focus:outline-none">
-                                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="inline-block" alt="Logo" style="height: 24px"><span class="inline-block text-white ml-2">{{ $shortWorkUnits }}</span>
+                                <img loading="lazy" src="{{ asset('assets/images/brand/lambang-depok.png') }}" height="24" class="inline-block" alt="Logo" style="height: 24px"><span class="inline-block text-white ml-2">{{ $result }}</span>
                             </a>
                             <p class="mt-6 text-gray-300">
-                                Website Resmi {{ $shortWorkUnits }}. Silakan kunjungi Media Sosial Kami untuk informasi lainnya.
+                                Website Resmi {{ $result }}. Silakan kunjungi Media Sosial Kami untuk informasi lainnya.
                             </p>
                             @if (!empty($generalInformations))
                                 @foreach ($generalInformations as $generalInformation)
@@ -141,6 +154,11 @@
                                         <i class="uil uil-angle-right-b me-1"></i> Regulasi
                                     </a>
                                 </li>
+                                <li class="mt-[10px]">
+                                    <a href="https://esop.depok.go.id/home/survey" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out" target="_blank">
+                                        <i class="uil uil-angle-right-b me-1"></i> SKM
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -154,7 +172,7 @@
             <div class="grid md:grid-cols-2 items-center">
                 <div class="md:text-left text-center">
                     <p class="mb-0">
-                        © <script>document.write(new Date().getFullYear())</script> {{ $shortWorkUnits }}. Didesain dengan <i class="mdi mdi-heart text-red-600"></i> oleh <a href="https://diskominfo.depok.go.id/" target="_blank" class="text-reset">Diskominfo</a>.
+                        © <script>document.write(new Date().getFullYear())</script> {{ $result }}. Didesain dengan <i class="mdi mdi-heart text-red-600"></i> oleh <a href="https://diskominfo.depok.go.id/" target="_blank" class="text-reset">Diskominfo</a>.
                     </p>
                 </div>
             </div>

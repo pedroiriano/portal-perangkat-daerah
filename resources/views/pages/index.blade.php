@@ -75,7 +75,7 @@
                         Cuaca Hari Ini
                     </p>
                     <p id="desc-weather" class="text-slate-400 mt-1">
-                        Berawan
+                        -
                     </p>
                 </div>
             </div>
@@ -530,13 +530,47 @@
             </h3>
         </div>
 
+        @if (!empty($externalLinks))
+            @php
+                $countLinks = 0;
+            @endphp
+            @foreach ($externalLinks as $externalLink)
+                @php
+                    $countLinks = $countLinks + 1;
+                @endphp
+            @endforeach
+        @endif
+
+        @if ($countLinks >= 5)
+            @php
+                $tinySlider = 'tiny-five-item';
+            @endphp
+        @elseif ($countLinks == 4)
+            @php
+                $tinySlider = 'tiny-four-item';
+            @endphp
+        @elseif ($countLinks == 3)
+            @php
+                $tinySlider = 'tiny-three-item';
+            @endphp
+        @elseif ($countLinks == 2)
+            @php
+                $tinySlider = 'tiny-two-item';
+            @endphp
+        @elseif ($countLinks == 1)
+            @php
+                $tinySlider = 'tiny-one-item';
+            @endphp
+        @else
+            @php
+                $tinySlider = 'tiny-one-item';
+            @endphp
+        @endif
+
         <div class="grid grid-cols-1 mt-2 md:mt-6 relative">
-            <div class="tiny-five-item">
+            <div class="{{ $tinySlider }}">
                 <!-- Start Slide -->
                 @if (!empty($externalLinks))
-                    @php
-                        $count = 0;
-                    @endphp
                     @foreach ($externalLinks as $externalLink)
                         <div class="tiny-slide">
                             <div class="group relative overflow-hidden rounded-md shadow dark:shadow-gray-800 hover:shadow-lg dark:hover:shadow-gray-800 duration-500 ease-in-out m-2 mb-5">

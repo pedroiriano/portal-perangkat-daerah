@@ -17,6 +17,19 @@
 <!-- Start -->
 <section class="relative md:pb-24 pb-16">
     <div class="container">
+        @if (!empty($generalInformations))
+            @foreach ($generalInformations as $generalInformation)
+                @php
+                    $domain = $generalInformation['Domain'];
+                    preg_match('/^([a-zA-Z0-9-]+?)(?:-dev)?\./', $domain, $matches);
+                    $result = strtoupper(str_replace('-dev', '', $matches[1]));
+                @endphp
+            @endforeach
+        @else
+            @php
+                $result = $shortWorkUnits;
+            @endphp
+        @endif
         <div class="md:flex">
             <div class="relative lg:w-2/3 w-full -mt-32">
                 <div class="px-6 py-12 bg-white dark:bg-slate-900 rounded-md shadow dark:shadow-gray-800 text-center">
@@ -46,7 +59,7 @@
                                         Telepon
                                     </h5>
                                     <p class="text-slate-400 mt-3">
-                                        Nomor Telepon {{ $shortWorkUnits }}.
+                                        Nomor Telepon {{ $result }}.
                                     </p>
                                     <div class="mt-5">
                                         <a href="tel:{{ $generalInformation['Telp'] }}" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
@@ -65,7 +78,7 @@
                                         Email
                                     </h5>
                                     <p class="text-slate-400 mt-3">
-                                        Alamat Surat Elektronik {{ $shortWorkUnits }}
+                                        Alamat Surat Elektronik {{ $result }}
                                     </p>
                                     <div class="mt-5">
                                         <a href="mailto:{{ $generalInformation['Email'] }}" class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out">
@@ -116,6 +129,14 @@
                         <div class="ml-3">
                             <a href="{{ route('contact-us') }}" class="font-semibold hover:text-indigo-600" aria-selected="true">
                                 Hubungi Kami
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="https://www.lapor.go.id" class="font-semibold hover:text-indigo-600" aria-selected="false" target="_blank">
+                                Lapor
                             </a>
                         </div>
                     </div>

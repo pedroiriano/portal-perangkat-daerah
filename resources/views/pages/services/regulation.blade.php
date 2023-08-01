@@ -142,6 +142,14 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="flex items-center justify-center mt-4">
+                        <div class="ml-3">
+                            <a href="https://esop.depok.go.id/home/survey" class="font-semibold hover:text-indigo-600" aria-selected="false" target="_blank">
+                                Survei Kepuasan Masyarakat
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
