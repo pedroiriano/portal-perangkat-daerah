@@ -23,7 +23,7 @@
         {{-- END::CSRF Token --}}
 
         {{-- BEGIN::Title --}}
-        <title>{{ empty($result) ? config('app.name', 'Portal Perangkat Daerah') : $result }}</title>
+        <title>{{ empty($result) ? config('app.name', 'Portal Perangkat Daerah') : $result.' Kota Depok' }}</title>
         {{-- END::Title --}}
 
         {{-- BEGIN::Main CSS --}}
